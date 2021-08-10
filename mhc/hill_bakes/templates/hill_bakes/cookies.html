@@ -13,7 +13,13 @@ Cookies
     <h2><a href="{% url 'hill_bakes:cakes' %}">Cakes</a></h2>
     <h2><a href="{% url 'hill_bakes:cake_balls' %}">Cake Balls</a></h2>
     <h2><a href="{% url 'hill_bakes:about' %}">About</a></h2>
-    <h2><a href="{% url 'hill_bakes:login' %}">Login/Register</a></h2>
+    <h2><a href="{% url 'hill_bakes:login' %}">Login</a></h2>
+    <h2><a href="{% url 'hill_bakes:signup' %}">Register</a></h2>
+</div>
+<div class="cookie_class">
+    {% for chip in cookie %}
+    <p>{{chip}}</p>
+    {% endfor %}
 </div>
 
 

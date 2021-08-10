@@ -1,6 +1,6 @@
 from django.shortcuts import render, reverse
 from django.http.response import HttpResponse, HttpResponseRedirect
-from django.contrib.auth.models import User
+from .models import User, Product
 from django.contrib.auth import authenticate, login, logout
 
 
@@ -9,15 +9,28 @@ def home_page(request):
 
 
 def cookies(request):
-    return render(request, 'hill_bakes/cookies.html')
+    cookie = Product.objects.filter(type_id='1')
+    context = {
+        'cookie': cookie
+    }
+
+    return render(request, 'hill_bakes/cookies.html', context)
 
 
 def cakes(request):
-    return render(request, 'hill_bakes/cakes.html')
+    cake = Product.objects.filter(type_id='4')
+    context = {
+        'cake': cake
+    }
+    return render(request, 'hill_bakes/cakes.html', context)
 
 
 def cake_balls(request):
-    return render(request, 'hill_bakes/cake_balls.html')
+    cake_ball = Product.objects.filter(type_id='6')
+    context = {
+        'cake_ball': cake_ball
+    }
+    return render(request, 'hill_bakes/cake_balls.html', context)
 
 
 def about(request):
@@ -43,10 +56,10 @@ def signup(request):
 
         login(request, user)
 
-        return HttpResponseRedirect(reverse('hill_bakes:home'))
+        return HttpResponseRedirect(reverse('hill_bakes:home_page'))
 
 
-def login(request):
+def login_user(request):
     # user visits page
     if request.method == 'GET':
         return render(request, 'hill_bakes/login.html')
@@ -62,10 +75,10 @@ def login(request):
         if user != None:
             login(request, user)
 
-        return HttpResponseRedirect(reverse('hill_bakes:home'))
+        return HttpResponseRedirect(reverse('hill_bakes:home_page'))
 
 
 def logout_user(request):
     logout(request)
 
-    return HttpResponseRedirect(reverse('hill_bakes:home'))
+    return HttpResponseRedirect(reverse('hill_bakes:home_page'))

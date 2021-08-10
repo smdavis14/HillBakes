@@ -14,7 +14,9 @@ Login
     <h2><a href="{% url 'hill_bakes:cakes' %}">Cake</a></h2>
     <h2><a href="{% url 'hill_bakes:cake_balls' %}">Cake Balls</a></h2>
     <h2><a href="{% url 'hill_bakes:about' %}">About</a></h2>
+    <h2><a href="{% url 'hill_bakes:signup' %}">Register</a></h2>
 </div>
+
 <body>
 
     <form action="{% url 'hill_bakes:login' %}" method="POST">
@@ -24,7 +26,7 @@ Login
         <button type="submit">Login</button>
         <!-- <a href="{% url 'hill_bakes:signup' %}">or signup</a> -->
     </form>
-    
+
 </body>
 
 
