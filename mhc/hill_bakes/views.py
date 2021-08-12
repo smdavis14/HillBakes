@@ -1,6 +1,6 @@
 from django.shortcuts import render, reverse
 from django.http.response import HttpResponse, HttpResponseRedirect
-from .models import User, Product
+from .models import User, Product, ProductType
 from django.contrib.auth import authenticate, login, logout
 
 
@@ -18,7 +18,7 @@ def cookies(request):
 
 
 def cakes(request):
-    cake = Product.objects.filter(type_id='4')
+    cake = ProductType.objects.filter(id='5')
     context = {
         'cake': cake
     }

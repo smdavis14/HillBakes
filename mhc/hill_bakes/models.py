@@ -12,22 +12,21 @@ class User(AbstractUser):
         return self.username
 
 
-class ProductType(models.Model):
-    type = models.CharField(max_length=50)
-    price = models.IntegerField()
-
-    def __str__(self):
-        return self.type
-
-
 class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=150, default='')
-    type = models.ForeignKey('hill_bakes.ProductType',
-                             on_delete=models.PROTECT, related_name='products')
 
     def __str__(self):
         return self.name
+
+
+class ProductType(models.Model):
+    type = models.CharField(max_length=50)
+    price = models.IntegerField()
+    product = models.ManyToManyField(Product)
+
+    def __str__(self):
+        return self.type
 
 
 class UserHistory(models.Model):
