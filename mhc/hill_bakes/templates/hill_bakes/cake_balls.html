@@ -9,16 +9,16 @@ Cake Balls
     <h1>Hill Bakes</h1>
 </div>
 <div class="sub_main">
-    <h2><a href="{% url 'hill_bakes:home_page' %}">Home</a></h2>
-    <h2><a href="{% url 'hill_bakes:cookies' %}">Cookies</a></h2>
-    <h2><a href="{% url 'hill_bakes:cakes' %}">Cakes</a></h2>
-    <h2><a href="{% url 'hill_bakes:about' %}">About</a></h2>
-    <h2><a href="{% url 'hill_bakes:login' %}">Login</a></h2>
-    <h2><a href="{% url 'hill_bakes:signup' %}">Register</a></h2>
+    <h3><a href="{% url 'hill_bakes:home_page' %}">Home</a></h3>
+    <h3><a href="{% url 'hill_bakes:cookies' %}">Cookies</a></h3>
+    <h3><a href="{% url 'hill_bakes:cakes' %}">Cakes</a></h3>
+    <h3><a href="{% url 'hill_bakes:about' %}">About</a></h3>
+    <h3><a href="{% url 'hill_bakes:login' %}">Login</a></h3>
+    <h3><a href="{% url 'hill_bakes:signup' %}">Register</a></h3>
 </div>
 <div class="cake_ball_class">
     {% for ball in cake_ball %}
-    <p>{{ball}}</p>
+    <h3 id="cake_ball">{{ball}}</h3><p> - {{ball.description}}</p>
     {% endfor %}
 </div>
 

@@ -22,6 +22,7 @@ class ProductType(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
+    description = models.CharField(max_length=150, default='')
     type = models.ForeignKey('hill_bakes.ProductType',
                              on_delete=models.PROTECT, related_name='products')
 
