@@ -15,10 +15,14 @@ Cakes
     <h3><a href="{% url 'hill_bakes:about' %}">About</a></h3>
     <h3><a href="{% url 'hill_bakes:login' %}">Login</a></h3>
     <h3><a href="{% url 'hill_bakes:signup' %}">Register</a></h3>
+    <h3><a href="{% url 'hill_bakes:shopping_cart' %}">Shopping Cart</a></h3>
 </div>
 <div class="cake_class">
-    {% for icing in cake.Product.all %}
-    <h3 class="cake">{{icing.name}}</h3>
+    {% for icing in cake %}
+        {% for product in icing.product.all %}
+        <h3 class="cake">{{product.name}}</h3>
+        <p> - {{product.description}}</p>
+        {% endfor %}
 
     {% endfor %}
 </div>

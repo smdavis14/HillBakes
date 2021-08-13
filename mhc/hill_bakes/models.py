@@ -23,7 +23,7 @@ class Product(models.Model):
 class ProductType(models.Model):
     type = models.CharField(max_length=50)
     price = models.IntegerField()
-    product = models.ManyToManyField(Product)
+    product = models.ManyToManyField(Product, related_name='relation')
 
     def __str__(self):
         return self.type

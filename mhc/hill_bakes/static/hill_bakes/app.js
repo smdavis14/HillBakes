@@ -1,12 +1,30 @@
+
+let toOrder = []
+
 const cookieDropDown = document.getElementsByClassName('cookie')
 const cakeDropDown = document.getElementsByClassName('cake')
 const cakeBallDropDown = document.getElementsByClassName('cake_ball')
 
 for (let cookie of cookieDropDown){
   cookie.addEventListener('click', () => {
-  console.log("I'm a cookie, buy me!")
+    placeOrder()
 })
 }
+
+const cookieList = ['Cookies - Single $5', 'Cookies - 3 $13', 'Cookies - 6 $27']
+const placeOrder = () => {document.createElement('select')
+  placeOrder.name = 'Order'
+  placeOrder.id = 'Order'
+  for (let choice of cookieList){
+    console.log(choice)
+    let option = document.createElement('option')
+    console.log(option)
+    option.value = choice
+  }
+  console.log('my select dropdown')}
+
+
+
 
 for (let cake of cakeDropDown){
   cake.addEventListener('click', () => {

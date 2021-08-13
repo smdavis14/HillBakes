@@ -1,5 +1,7 @@
+from django.apps import apps
 from django.urls import path
-from .views import home_page, cookies, cakes, cake_balls, about, login_user, signup
+from django.contrib import admin
+from .views import home_page, cookies, cakes, cake_balls, about, login_user, shopping_cart, signup, shopping_cart
 
 app_name = 'hill_bakes'
 urlpatterns = [
@@ -10,4 +12,5 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('login/', login_user, name='login'),
     path('signup/', signup, name='signup'),
+    path('shopping_cart/', shopping_cart, name='shopping_cart'),
 ]

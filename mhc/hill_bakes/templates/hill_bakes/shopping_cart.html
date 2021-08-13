@@ -1,12 +1,12 @@
 {% extends 'hill_bakes/base.html' %}
 
 {% block title %}
-Hill Bakes
+Shopping Cart
 {% endblock %}
 
 {% block content %}
-<div class="home_main">
-    <h1>Hill Bakes</h1>
+<div class="cart_main">
+    <h1>Shopping Cart</h1>
 </div>
 <div class="main">
     <h3><a href="{% url 'hill_bakes:home_page' %}">Home</a></h3>
@@ -16,12 +16,10 @@ Hill Bakes
     <h3><a href="{% url 'hill_bakes:about' %}">About</a></h3>
     <h3><a href="{% url 'hill_bakes:login' %}">Login</a></h3>
     <h3><a href="{% url 'hill_bakes:signup' %}">Register</a></h3>
-    <h3><a href="{% url 'hill_bakes:shopping_cart' %}">Shopping Cart</a></h3>
 </div>
-<div class="welcome">
-    <H1>Welcome to Hill Bakes</H1>
-    <h2>Individually crafted baked goods with high quality ingredients to create distinctive, memorable flavors. Every
-        bite is an indulgence to savor. 🥮 </h2>
+<div class="cart">
+    <H1>Your cart</H1>
+ 
 </div>
 
 

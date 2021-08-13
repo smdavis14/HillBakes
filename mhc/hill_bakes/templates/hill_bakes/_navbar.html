@@ -2,7 +2,7 @@
 <header class="menu">
   <div class="menu-wrap">
     <i class="menu-logo"> 🍪  </i>
-    <img src="{% static 'hill_bakes/cart.png' %}" alt="cart">
+    <a href="{% url 'hill_bakes:shopping_cart' %}""><img src="{% static 'hill_bakes/cart.png' %}" alt="cart"></a>
     <input type="checkbox" id="checkbox">
     <div class="navbar">
       <ul>

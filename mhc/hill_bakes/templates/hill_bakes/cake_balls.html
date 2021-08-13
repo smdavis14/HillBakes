@@ -15,10 +15,15 @@ Cake Balls
     <h3><a href="{% url 'hill_bakes:about' %}">About</a></h3>
     <h3><a href="{% url 'hill_bakes:login' %}">Login</a></h3>
     <h3><a href="{% url 'hill_bakes:signup' %}">Register</a></h3>
+    <h3><a href="{% url 'hill_bakes:shopping_cart' %}">Shopping Cart</a></h3>
 </div>
 <div class="cake_ball_class">
     {% for ball in cake_ball %}
-    <h3 class="cake_ball">{{ball}}</h3><p> - {{ball.description}}</p>
+        {% for product in ball.product.all %}
+        <h3 class="cake_ball">{{product.name}}</h3>
+        <p> - {{product.description}}</p>
+        {% endfor %}
+
     {% endfor %}
 </div>
 

@@ -9,7 +9,7 @@ def home_page(request):
 
 
 def cookies(request):
-    cookie = Product.objects.filter(type_id='1')
+    cookie = ProductType.objects.filter(id='1')
     context = {
         'cookie': cookie
     }
@@ -26,7 +26,7 @@ def cakes(request):
 
 
 def cake_balls(request):
-    cake_ball = Product.objects.filter(type_id='6')
+    cake_ball = ProductType.objects.filter(id='6')
     context = {
         'cake_ball': cake_ball
     }
@@ -82,3 +82,7 @@ def logout_user(request):
     logout(request)
 
     return HttpResponseRedirect(reverse('hill_bakes:home_page'))
+
+
+def shopping_cart(request):
+    return render(request, 'hill_bakes/shopping_cart')
