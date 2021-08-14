@@ -13,8 +13,8 @@ for (let cookie of cookieDropDown){
 
 const cookieList = ['Cookies - Single $5', 'Cookies - 3 $13', 'Cookies - 6 $27']
 const placeOrder = () => {document.createElement('select')
-  placeOrder.name = 'Order'
-  placeOrder.id = 'Order'
+  placeOrder.name = 'cookie'
+  placeOrder.id = 'cookie'
   for (let choice of cookieList){
     console.log(choice)
     let option = document.createElement('option')

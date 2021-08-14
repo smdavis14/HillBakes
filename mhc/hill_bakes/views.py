@@ -85,4 +85,4 @@ def logout_user(request):
 
 
 def shopping_cart(request):
-    return render(request, 'hill_bakes/shopping_cart')
+    return render(request, 'hill_bakes/shopping_cart.html')
